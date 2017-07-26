@@ -43776,22 +43776,7 @@ var _index = __webpack_require__(46);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var Dante = function () {
-  function Dante(options) {
-    (0, _classCallCheck3['default'])(this, Dante);
-
-    if (options == null) {
-      options = {};
-    }
-    console.log("init editor Dante!");
-
-    // deep merge on config
-    var config = (0, _immutable.Map)((0, _immutable.fromJS)(this.defaultOptions(options)));
-
-    this.options = config.mergeDeep(options).toJS();
-    console.log(this.options);
-  }
-
-  (0, _createClass3['default'])(Dante, [{
+  (0, _createClass3['default'])(Dante, null, [{
     key: 'defaultOptions',
     value: function defaultOptions(options) {
       // default options
@@ -44003,7 +43988,24 @@ var Dante = function () {
 
       return defaultOptions;
     }
-  }, {
+  }]);
+
+  function Dante(options) {
+    (0, _classCallCheck3['default'])(this, Dante);
+
+    if (options == null) {
+      options = {};
+    }
+    console.log("init editor Dante!");
+
+    // deep merge on config
+    var config = (0, _immutable.Map)((0, _immutable.fromJS)(Dante.defaultOptions(options)));
+
+    this.options = config.mergeDeep(options).toJS();
+    console.log(this.options);
+  }
+
+  (0, _createClass3['default'])(Dante, [{
     key: 'getContent',
     value: function getContent() {
       return this.options.content;

@@ -25,20 +25,7 @@ import {
   addNewBlockAt } from '../model/index.js'
 
 class Dante {
-  constructor(options) {
-    if (options == null) {
-      options = {}
-    }
-    console.log("init editor Dante!")
-
-    // deep merge on config
-    let config = Map(fromJS(this.defaultOptions(options)))
-
-    this.options = config.mergeDeep(options).toJS()
-    console.log(this.options)
-  }
-
-  defaultOptions(options) {
+  static defaultOptions(options) {
     // default options
     if (options == null) {
       options = {}
@@ -279,6 +266,19 @@ class Dante {
     }
 
     return defaultOptions
+  }
+
+  constructor(options) {
+    if (options == null) {
+      options = {}
+    }
+    console.log("init editor Dante!")
+
+    // deep merge on config
+    let config = Map(fromJS(Dante.defaultOptions(options)))
+
+    this.options = config.mergeDeep(options).toJS()
+    console.log(this.options)
   }
 
   getContent() {
