@@ -36,7 +36,7 @@ package
 .babel_cache
 # Build stuff
 amd/
-lib/
+# lib/
 es/
 tmp-bower-repo/
 tmp-docs-repo/
